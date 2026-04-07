@@ -1,3 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primaryColor: rgb(99, 102, 241);
+  --color-secondaryColor: rgb(161, 163, 247);
+  --color-primaryText: rgb(255, 255, 255);
+  --color-secondaryText: rgb(174, 178, 183);
+  --color-bgDark1: rgb(31, 32, 35);
+  --color-bgDark2: rgb(38, 39, 43);
+  --color-bgDark3: rgb(48, 49, 54);
+  --color-bgDark3Hover: rgb(55, 56, 62);
+  --color-bgDarkTransparent: rgb(31 32 35 / 0.7);
+  --color-bgDarkTransparentDarker: rgb(0 0 0 / 0.5);
+  --color-bgDarkTransparentLighter: rgb(48 49 54 / 0.7);
+  --color-mainBorder: rgb(255 255 255 / 0.15);
+  --color-mainBorderDarker: rgb(255 255 255 / 0.07);
+  --color-quoteIconColor: rgb(178, 184, 205);
+
+  --font-Inter: "Inter";
+
+  --breakpoint-xs: 530px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
 /* Typography */
 
 .block-title {
@@ -7,7 +35,7 @@
   @apply text-primaryText text-4xl xl:text-5xl font-bold tracking-normal;
 }
 .block-subtitle {
-  @apply text-xs text-secondaryColor  tracking-wider font-bold uppercase;
+  @apply text-xs text-secondaryColor tracking-wider font-bold uppercase;
 }
 .content-title {
   @apply text-primaryText text-lg font-bold tracking-normal;
@@ -34,7 +62,7 @@
   @apply rounded-lg font-bold bg-primaryColor text-primaryText flex justify-center items-center hover:bg-[#7274f3] cursor-pointer transition;
 }
 .outlined-button {
-  @apply text-primaryText main-border-gray rounded-xl bg-bgDark2 hover:bg-bgDark3  border-gray-700 text-sm;
+  @apply text-primaryText border border-solid border-mainBorder rounded-xl bg-bgDark2 hover:bg-bgDark3 border-gray-700 text-sm;
 }
 
 /* Preventing FOUC */

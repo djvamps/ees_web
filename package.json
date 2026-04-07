@@ -1,9 +1,9 @@
 {
   "name": "tailcast",
   "type": "module",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "license": "MIT",
-  "description": "Dark themed website template built on AstroJS, designed for fictional startup",
+  "description": "Dark themed website template built on Astro and Tailwind CSS, designed for fictional startup",
   "author": {
     "name": "Mateusz Wyrębek (matt765)",
     "email": "mateusz.wyrebek@gmail.com",
@@ -18,17 +18,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.0",
-    "@fontsource/inter": "^5.0.18",
-    "astro": "^4.9.2",
-    "framer-motion": "^11.2.10",
-    "npm": "^10.8.1",
-    "npm-check-updates": "^16.14.20",
-    "tailwindcss": "^3.4.3"
+    "@fontsource/inter": "^5.2.8",
+    "astro": "^6.1.4"
   },
   "devDependencies": {
-    "@astrojs/react": "^3.4.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
