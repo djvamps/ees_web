@@ -1,35 +1,56 @@
 ---
-import { Image } from "astro:assets";
-import feature5 from "../assets/images/feature5.jpg";
-import feature6 from "../assets/images/feature6.jpg";
-import CheckArrowIcon from "../assets/icons/CheckArrowIcon.astro";
+import { Image } from 'astro:assets';
+import feature5 from '../assets/images/feature5.jpg';
+import feature6 from '../assets/images/feature6.jpg';
+import CheckArrowIcon from '../assets/icons/CheckArrowIcon.astro';
 ---
 
-<section class="w-full bg-bgDark2 mt-12 sm:mt-24 mb-12 lg:my-20 lg:mb-24 pt-4">
+<section class="bg-bgDark2 mt-12 mb-12 w-full pt-4 sm:mt-24 lg:my-20 lg:mb-24">
   <div class="fade-in">
-    <div class="flex flex-wrap items-center 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16">
-      <div class="w-11/12 sm:w-3/4 mx-auto lg:w-1/2 flex flex-wrap lg:-mx-4 sm:pr-8 justify-center order-last lg:order-first">
-        <div class="mb-8 lg:mb-0 w-full px-2 lg:pl-16 flex flex-col justify-center md:pl-8">
-          <div class="mb-4 py-3 md:pl-3 md:pr-20 lg:pr-12 rounded">
-            <Image src={feature5} alt="Feature image 5" class="rounded-xl main-border-gray" loading="eager" decoding="sync" />
+    <div
+      class="mx-auto flex w-11/12 flex-wrap items-center md:pl-4 xl:w-[81.25rem] xl:pr-16 xl:pl-16 2xl:w-[90.625rem]"
+    >
+      <div
+        class="order-last mx-auto flex w-11/12 flex-wrap justify-center sm:w-3/4 sm:pr-8 lg:order-first lg:-mx-4 lg:w-1/2"
+      >
+        <div class="mb-8 flex w-full flex-col justify-center px-2 md:pl-8 lg:mb-0 lg:pl-16">
+          <div class="mb-4 rounded py-3 md:pr-20 md:pl-3 lg:pr-12">
+            <div class="relative">
+              <Image
+                src={feature5}
+                alt="Feature image 5"
+                class="image-border rounded-xl"
+                loading="eager"
+                decoding="sync"
+              />
+              <div class="pointer-events-none absolute inset-0 rounded-xl bg-black/10"></div>
+            </div>
           </div>
-          <div class="py-3 md:pl-20 lg:pl-12 md:pr-2 rounded">
-            <Image src={feature6} alt="Feature image 6" class="rounded-xl main-border-gray" loading="eager" decoding="sync" />
+          <div class="rounded py-3 md:pr-2 md:pl-20 lg:pl-12">
+            <div class="relative">
+              <Image
+                src={feature6}
+                alt="Feature image 6"
+                class="image-border rounded-xl"
+                loading="eager"
+                decoding="sync"
+              />
+              <div class="pointer-events-none absolute inset-0 rounded-xl bg-black/10"></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="w-full lg:w-1/2 mb-12 lg:mb-0 xl:pl-8">
-        <div class="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-unset">
+      <div class="mb-12 w-full lg:mb-0 lg:w-1/2 xl:pl-8">
+        <div class="lg:w-unset mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:mx-auto">
           <span class="block-subtitle">Make Data-Driven Decisions</span>
-          <h2 class="mt-6 mb-8 text-4xl lg:text-5xl block-big-title">
+          <h2 class="block-big-title mt-6 mb-8 text-4xl lg:text-5xl">
             Issue tracking you'll enjoy using
           </h2>
-          <p class="mb-12 text-secondaryText leading-loose">
-            Monitor and track data issues with ease using our intuitive and
-            efficient issue tracking system. Stay ahead of potential problems
-            and improve your workflow.
+          <p class="text-secondaryText mb-12 leading-loose">
+            Monitor and track data issues with ease using our intuitive and efficient issue tracking
+            system. Stay ahead of potential problems and improve your workflow.
           </p>
-          <ul class="mb-6 text-primaryText">
+          <ul class="text-primaryText mb-6">
             <li class="mb-4 flex"><CheckArrowIcon /><span>Collaborative environment</span></li>
             <li class="mb-4 flex"><CheckArrowIcon /><span>Smart issue categorization</span></li>
             <li class="mb-4 flex"><CheckArrowIcon /><span>Customizable notifications</span></li>

@@ -1,23 +1,19 @@
 # Tailcast
 
-**Dark-themed website template built with Astro 6 & Tailwind CSS**<br>
+**Dark-themed website template built with Astro 6 & Tailwind CSS, designed for a fictional startup.**<br>
 Responsive, fast, and ready to customize.
 
 [Live Demo](https://tailcast.vercel.app) · [Getting Started](#quickstart) · [Changelog](https://github.com/matt765/Tailcast/blob/main/CHANGELOG.md)
 
-![Forks](https://img.shields.io/github/forks/matt765/Tailcast?style=flat) ![Version](https://img.shields.io/github/package-json/v/matt765/Tailcast?color=green)
-
-<br>
-
-![Tailcast preview](https://github.com/user-attachments/assets/0bb55d93-227b-4f7a-b8bc-ddce5d54db15)
-
-## Overview
-
-Tailcast is an open-source and free Astro theme with multiple pages, designed for a fictional startup.
+<img src="https://img.shields.io/github/forks/matt765/Tailcast?style=flat" alt="Forks"> <img src="https://img.shields.io/github/package-json/v/matt765/Tailcast?color=green" alt="Version">
 
 ## Tech stack
 
 Astro 6, TypeScript, Tailwind CSS 4, ESLint, Prettier
+
+## Preview
+
+![Tailcast preview](https://github.com/user-attachments/assets/0bb55d93-227b-4f7a-b8bc-ddce5d54db15)
 
 ## Features
 

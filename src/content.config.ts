@@ -1,7 +1,7 @@
 /**
  * Astro 5+ requires this file at `src/content.config.ts` to define
  * content collections used by `getCollection()`. The location is hardcoded
- * by the framework — moving or renaming this file will break content loading.
+ * by the framework - moving or renaming this file will break content loading.
  *
  * @see https://docs.astro.build/en/guides/content-collections/
  */

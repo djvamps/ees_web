@@ -1,5 +1,5 @@
 <button
-  class="w-12 h-12 fixed bottom-6 right-6 main-border-gray rounded-xl bg-bgDark2 hover:bg-bgDark3 cursor-pointer flex justify-center items-center transition z-50 hidden"
+  class="main-border-gray-darker bg-bgDark2 hover:bg-bgDark3 fixed right-6 bottom-6 z-50 flex hidden h-12 w-12 cursor-pointer items-center justify-center rounded-xl transition"
   id="scroll-up-btn"
   aria-label="Scroll to top"
 >
@@ -9,29 +9,33 @@
     width="35px"
     height="35px"
     viewBox="0 0 20 20"
+    aria-hidden="true"
   >
     <path
       d="M4.16732 12.5L10.0007 6.66667L15.834 12.5"
       stroke="rgb(99, 102, 241)"
       stroke-width="2"
       stroke-linecap="round"
-      stroke-linejoin="round"
-    ></path>
+      stroke-linejoin="round"></path>
   </svg>
 </button>
 
 <script>
-  const btn = document.getElementById("scroll-up-btn");
+  const initScrollUpButton = () => {
+    const btn = document.getElementById('scroll-up-btn');
 
-  window.addEventListener("scroll", () => {
-    if (document.documentElement.scrollTop > 300) {
-      btn?.classList.remove("hidden");
-    } else {
-      btn?.classList.add("hidden");
-    }
-  });
+    window.addEventListener('scroll', () => {
+      if (document.documentElement.scrollTop > 300) {
+        btn?.classList.remove('hidden');
+      } else {
+        btn?.classList.add('hidden');
+      }
+    });
 
-  btn?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+    btn?.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  };
+
+  document.addEventListener('astro:page-load', initScrollUpButton);
 </script>
