@@ -4,6 +4,7 @@
   --color-primaryColor: rgb(99, 102, 241);
   --color-secondaryColor: rgb(161, 163, 247);
   --color-primaryText: rgb(255, 255, 255);
+  --color-heroText: rgb(230, 230, 230);
   --color-secondaryText: rgb(174, 178, 183);
   --color-bgDark1: rgb(23, 24, 27);
   --color-bgDark2: rgb(30, 31, 35);
@@ -186,7 +187,3 @@
   @apply h-4 w-4;
 }
 
-/* Preventing FOUC */
-@font-face {
-  font-display: var(--fontsource-Inter-font-display, optional);
-}
