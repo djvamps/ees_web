@@ -1,52 +1,62 @@
 ---
 import { Image } from 'astro:assets';
 import dashboard from '../assets/images/dashboard.jpg';
+import heroBg from '../assets/images/nina-sembrando.png';
 ---
 
 <section
-  class="bg-bgDark1 mb-[28vw] flex w-full items-center justify-center pb-24 sm:pb-32 md:mb-[18vw] md:pb-44 lg:mb-[10vw] lg:pb-0 xl:mb-[13vw] 2xl:mb-60"
+  class="relative mb-[28vw] flex w-full items-center justify-center overflow-hidden pb-24 sm:pb-32 md:mb-[18vw] md:pb-44 lg:mb-[10vw] lg:pb-0 xl:mb-[13vw] 2xl:mb-60"
   id="home"
 >
-  <!-- <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 65%)"></div> -->
+  <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+    <Image
+      src={heroBg}
+      alt=""
+      class="h-full w-full object-cover object-[center_40%]"
+      fetchpriority="high"
+      loading="eager"
+    />
+    <div class="hero-bg-overlay absolute inset-0"></div>
+  </div>
+
   <div
-    class="flex w-full flex-col items-center justify-center pt-16 text-center md:w-[50rem] md:pt-16 lg:pt-20 xl:w-[56.25rem]"
+    class="relative z-10 flex w-full flex-col items-center justify-center pt-16 text-center md:w-[50rem] md:pt-16 lg:pt-20 xl:w-[56.25rem]"
   >
     <div class="hero-fade-in" style="--delay: 0s">
       <span class="block-subtitle mt-16 mb-6 block text-[0.65rem] sm:mt-32 sm:text-xs">
-        Discover new data flow
+        COMUNIDAD, NATURALEZA Y APRENDISAJE VIVO
       </span>
     </div>
     <div class="hero-fade-in mx-auto max-w-3xl px-4" style="--delay: 0.05s">
       <h1
         class="xs:text-4xl text-[1.7rem] leading-[1.1] font-bold tracking-tight md:text-5xl lg:text-6xl"
       >
-        <span class="text-heroText">One platform to track</span><br />
-        <span class="text-heroText">the full picture</span>
+        <span class="text-heroText">Sembramos hoy la nueva</span><br />
+        <span class="text-heroText">humanidad del mañana</span>
       </h1>
     </div>
     <div class="hero-fade-in" style="--delay: 0.1s">
       <p
         class="text-secondaryText mx-auto mt-7 max-w-2xl px-4 text-sm leading-relaxed sm:text-base"
       >
-        A complete analytics platform designed to scale with your team - from your first event to
-        billions of data points.
+      En Eco Escuela Ser creemos que cada niño merece crecer en un espacio donde su esencia sea respetada, su curiosidad sea celebrada y su conexión con la naturaleza sea profunda. Ofrecemos una educación integral basada en metodologías innovadoras que despiertan el potencial único de cada ser humano.
       </p>
     </div>
     <div class="hero-fade-in" style="--delay: 0.15s">
       <div class="mt-10 mb-24 flex flex-col justify-center gap-2 sm:mb-40 sm:flex-row">
         <button
-          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.25)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
+          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(109,62,6,0.4)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
           data-open-modal
           aria-label="Get started"
         >
-          Get Started
+          Admisión 2026
         </button>
         <button
           class="text-primaryText bg-bgDark2 hover:bg-bgDark3 border-primaryColor flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl border border-solid text-sm font-bold transition sm:w-44"
           data-open-modal
           aria-label="Live demo"
         >
-          Live demo
+          Propuesta
         </button>
       </div>
     </div>
@@ -84,6 +94,18 @@ import dashboard from '../assets/images/dashboard.jpg';
 </section>
 
 <style>
+  .hero-bg-overlay {
+    background:
+      linear-gradient(135deg, rgb(77 108 31 / 0.3) 0%, transparent 50%),
+      linear-gradient(
+        180deg,
+        rgb(28 39 11 / 0.92) 0%,
+        rgb(40 56 16 / 0.78) 38%,
+        rgb(28 39 11 / 0.88) 72%,
+        rgb(28 39 11) 100%
+      );
+  }
+
   .hero-fade-in {
     opacity: 0;
     transform: translateY(10px);
