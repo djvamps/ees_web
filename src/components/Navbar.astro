@@ -17,7 +17,7 @@ const isHomepage = currentPath === '/' || currentPath === '/index.html';
 const isActive = (href: string) => {
   if (href.startsWith('/#')) return false;
   return currentPath.startsWith(href);
-}
+};
 ---
 
 <nav
@@ -42,7 +42,7 @@ const isActive = (href: string) => {
         {
           navbarLinks.map(({ href, label }) => (
             <a
-              class={`relative flex h-20 cursor-pointer items-center px-4 text-2xl leading-6 font-normal text-white transition duration-200 hover:text-secondaryColorLight focus-visible:outline-offset-[-4px] lg:text-base lg:font-medium 2xl:px-6`}
+              class={`hover:text-secondaryColorLight relative flex h-20 cursor-pointer items-center px-4 text-2xl leading-6 font-normal text-white transition duration-200 focus-visible:outline-offset-[-4px] lg:text-base lg:font-medium 2xl:px-6`}
               href={href}
               {...(isActive(href) ? { 'aria-current': 'page' } : {})}
             >

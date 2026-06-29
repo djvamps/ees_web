@@ -3,28 +3,28 @@
 // Recuerda guardarlas en la carpeta /public de tu proyecto (ej: public/galeria/foto1.jpg)
 const slides = [
   {
-    image: "/galeria/foto1.jpeg", 
-    alt: "Descripción de la imagen 1",
+    image: '/galeria/foto1.jpeg',
+    alt: 'Descripción de la imagen 1',
   },
   {
-    image: "/galeria/ecoescuelaser9.jpeg",
-    alt: "Descripción de la imagen 2",
+    image: '/galeria/ecoescuelaser9.jpeg',
+    alt: 'Descripción de la imagen 2',
   },
   {
-    image: "/galeria/ecoescuelaser13.jpeg",
-    alt: "Descripción de la imagen 3",
+    image: '/galeria/ecoescuelaser13.jpeg',
+    alt: 'Descripción de la imagen 3',
   },
   {
-    image: "/galeria/ecoescuelaser7.jpeg",
-    alt: "Descripción de la imagen 4",
+    image: '/galeria/ecoescuelaser7.jpeg',
+    alt: 'Descripción de la imagen 4',
   },
   {
-    image: "/galeria/ecoescuelaser14.jpeg",
-    alt: "Descripción de la imagen 3",
+    image: '/galeria/ecoescuelaser14.jpeg',
+    alt: 'Descripción de la imagen 3',
   },
   {
-    image: "/galeria/ecoescuelaser4.jpeg",
-    alt: "Descripción de la imagen 4",
+    image: '/galeria/ecoescuelaser4.jpeg',
+    alt: 'Descripción de la imagen 4',
   },
 ];
 const totalPages = slides.length;
@@ -36,9 +36,7 @@ const totalPages = slides.length;
       <div class="mb-12 max-w-2xl">
         <span class="block-subtitle mb-6 block">Actividades E.E.S.</span>
         <h2 class="block-big-title mb-6">Educar con amor, para un mundo consciente.</h2>
-        <p class="text-secondaryText">
-          Conectamos con la vida, con la tierra y con el ser.
-        </p>
+        <p class="text-secondaryText">Conectamos con la vida, con la tierra y con el ser.</p>
       </div>
 
       <div role="region" aria-roledescription="carousel" aria-label="Feature preview gallery">
@@ -78,12 +76,12 @@ const totalPages = slides.length;
             >
               {
                 [...slides, ...slides].map((slide) => (
-                  <div class="gallery-slide bg-bgDark1Lighter border-mainBorderDarker flex aspect-[4/3] w-full shrink-0 items-center justify-center rounded-xl border overflow-hidden sm:w-[calc(50%-0.75rem)]">
+                  <div class="gallery-slide bg-bgDark1Lighter border-mainBorderDarker flex aspect-[4/3] w-full shrink-0 items-center justify-center overflow-hidden rounded-xl border sm:w-[calc(50%-0.75rem)]">
                     {/* Se reemplazó el <svg> por la etiqueta <img> adaptada */}
-                    <img 
-                      src={slide.image} 
-                      alt={slide.alt} 
-                      class="w-full h-full object-cover"
+                    <img
+                      src={slide.image}
+                      alt={slide.alt}
+                      class="h-full w-full object-cover"
                       loading="lazy"
                     />
                   </div>
