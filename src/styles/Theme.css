@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primaryColor: rgb(109, 62, 6);
-  --color-primaryColorHover: rgb(138, 78, 8);
+  --color-primaryColor: rgb(224, 159, 31);
+  --color-primaryColorHover: rgb(194, 134, 18);
   --color-secondaryColor: rgb(232, 158, 22);
   --color-secondaryColorLight: rgb(245, 193, 99);
   --color-accentGreen: rgb(77, 108, 31);

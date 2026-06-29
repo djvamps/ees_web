@@ -4,11 +4,11 @@ import GithubIcon from '../assets/icons/GithubIcon.astro';
 
 const navbarLinks = [
   { label: 'Home', href: '/#home' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Nosotros', href: '/#features' },
+  { label: 'Metodología', href: '/services' },
+  { label: 'Galería', href: '/#galery' },
+  { label: 'Ubícanos', href: '/#mapa' },
+  { label: 'Contacto', href: '/contact' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -59,13 +59,13 @@ const isActive = (href: string) => {
       <div class="hidden grow basis-0 justify-end lg:flex">
         <a
           class="main-border-gray bg-bgDark2 hover:bg-bgDark3 flex rounded-xl pt-2 pr-8 pb-2 pl-6 text-sm text-white"
-          href="https://github.com/matt765/Tailcast"
+          href="/ees_2026_4.pdf"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Source code (opens in new tab)"
         >
           <GithubIcon />
-          <span class="pt-px">Source code</span>
+          <span class="pt-px">Damisión 2026</span>
         </a>
       </div>
     </div>

@@ -1,24 +1,34 @@
 ---
 const FAQData = [
   {
-    question: 'Can I upgrade or downgrade my plan at any time?',
+    question: '¿Qué hace diferente a Eco Escuela Ser?',
     answer:
-      'Yes, you can easily upgrade or downgrade your plan at any time. Simply navigate to the account settings in your dashboard and choose the desired plan. The changes will be reflected immediately, and any adjustments in pricing will be applied on your next billing cycle. Our support team is more than happy to provide guidance and recommendations.',
+      'En Eco Escuela Ser creemos que cada niño aprende a su propio ritmo. Combinamos metodologías como Waldorf, Montessori y Asiri con experiencias en la naturaleza, fomentando la creatividad, la autonomía, el pensamiento crítico y el desarrollo emocional en un entorno de respeto y amor.',
   },
   {
-    question: 'How to claim your 25% discount offer?',
+    question: '¿Qué edades pueden formar parte de la escuela?',
     answer:
-      'To claim your 25% discount, simply sign up for an account and enter the promotional code at checkout. The discount will be applied automatically to your purchase.',
+      'Nuestra propuesta educativa está diseñada para acompañar a niños en distintas etapas de desarrollo. Te invitamos a contactarnos para conocer los grupos disponibles, el proceso de admisión y encontrar el espacio más adecuado para tu hijo.',
   },
   {
-    question: "What's your refund policy?",
+    question: "¿Cómo se integran las actividades en la naturaleza?",
     answer:
-      "We offer a 30-day money-back guarantee on all our plans. If you're not satisfied with our product, simply contact our support team within 30 days of purchase for a full refund.",
+      "La naturaleza es parte fundamental de nuestro aprendizaje. Los niños participan en huertos, exploración del entorno, cuidado de animales, actividades artísticas al aire libre y proyectos vivenciales que fortalecen su conexión con el mundo natural y consigo mismos.",
   },
   {
-    question: 'How to get support for the product?',
+    question: '¿Cómo puedo agendar una visita o solicitar información?',
     answer:
-      "Our dedicated support team is here to help. You can reach out to us through the contact form on our website, send an email, or engage with us via live chat. We'll be happy to assist you with any questions or concerns you may have",
+      "Puedes comunicarte con nosotros a través de nuestro formulario de contacto, WhatsApp o redes sociales. Estaremos encantados de coordinar una visita para que conozcas nuestros espacios, metodología y comunidad educativa.",
+  },
+  {
+    question: '¿Cómo acompañan el desarrollo emocional de los niños?',
+    answer:
+      "Promovemos un ambiente seguro y respetuoso donde los niños aprenden a reconocer y expresar sus emociones. A través del acompañamiento cercano de nuestros educadores, fortalecemos la autoestima, la empatía y la confianza en sí mismos.",
+  },
+  {
+    question: '¿Participan las familias en la comunidad educativa?',
+    answer:
+      "Sí. Consideramos a las familias una parte esencial del proceso educativo. Organizamos encuentros, talleres, celebraciones y actividades comunitarias que fortalecen el vínculo entre la escuela, los niños y sus familias.",
   },
 ];
 ---
@@ -29,7 +39,7 @@ const FAQData = [
     <div class="relative z-10 container mx-auto w-11/12 px-2 sm:w-full sm:px-8 lg:px-4">
       <div class="mx-auto md:max-w-4xl">
         <p class="block-subtitle mb-7 text-center">Have any questions?</p>
-        <h2 class="block-big-title mb-16 text-center">Frequently Asked Questions</h2>
+        <h2 class="block-big-title mb-16 text-center">Preguntas Frecuentes</h2>
         <div class="-m-1 mb-11 flex flex-wrap">
           {
             FAQData.map((item, index) => (
