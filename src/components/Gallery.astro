@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 
 // 2. Importa tus archivos reales de la carpeta src/assets/images/
 import foto1 from '../assets/images/feature1.jpg'; // O el nombre correcto que desees mapear para foto1
-import eco9 from '../assets/images/feature2.jpg';  // Mapea con tus archivos reales de la lista
+import eco9 from '../assets/images/feature2.jpg'; // Mapea con tus archivos reales de la lista
 import eco13 from '../assets/images/feature3.jpg';
 import eco7 from '../assets/images/feature4.jpg';
 import eco14 from '../assets/images/feature5.jpg';
@@ -89,12 +89,12 @@ const totalPages = slides.length;
                 [...slides, ...slides].map((slide) => (
                   <div class="gallery-slide bg-bgDark1Lighter border-mainBorderDarker flex aspect-[4/3] w-full shrink-0 items-center justify-center overflow-hidden rounded-xl border sm:w-[calc(50%-0.75rem)]">
                     {/* Se reemplazó el <svg> por la etiqueta <img> adaptada */}
-                  <Image 
-      src={slide.image} 
-      alt={slide.alt} 
-      class="h-full w-full object-cover"
-      loading="lazy"
-      />
+                    <Image
+                      src={slide.image}
+                      alt={slide.alt}
+                      class="h-full w-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 ))
               }
