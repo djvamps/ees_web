@@ -1,11 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import dashboard from '../assets/images/dashboard.jpg';
 import heroBg from '../assets/images/nina-sembrando.png';
 ---
 
 <section
-  class="relative mb-[28vw] flex w-full items-center justify-center overflow-hidden pb-24 sm:pb-32 md:mb-[18vw] md:pb-44 lg:mb-[10vw] lg:pb-0 xl:mb-[13vw] 2xl:mb-60"
+  class="relative flex w-full items-center justify-center overflow-hidden pb-24 sm:pb-32 md:pb-44 lg:pb-0"
   id="home"
 >
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
@@ -63,36 +62,6 @@ import heroBg from '../assets/images/nina-sembrando.png';
         >
           Propuesta
         </button>
-      </div>
-    </div>
-    <div class="relative z-20 flex w-screen justify-center">
-      <div
-        class="hero-fade-in image-glow-border absolute z-10 mx-auto w-4/5 rounded-xl lg:top-6 xl:top-0 2xl:w-[75rem]"
-        style="--delay: 0.15s; opacity: 0.005"
-      >
-        <Image
-          src={dashboard}
-          alt="Dashboard image"
-          class="main-border-gray w-full rounded-xl"
-          fetchpriority="high"
-          loading="eager"
-        />
-        <div class="pointer-events-none absolute inset-0 rounded-xl bg-black/10"></div>
-      </div>
-    </div>
-    <div class="relative flex w-screen justify-center">
-      <div class="shape-divider-bottom-1665343298 mt-4 hidden sm:mt-16 md:mt-52 lg:block">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          class="bg-bgDark2"
-          aria-hidden="true"
-        >
-          <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill bg-bgDark1 fill-bgDark1"
-          ></path>
-        </svg>
       </div>
     </div>
   </div>
