@@ -40,29 +40,46 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
         </h3>
         <div class="-m-2 mt-4 flex flex-wrap lg:mt-0">
           <form
+            id="invitation-form"
             action="https://formspree.io/f/xlgywdob"
             method="POST"
             class="-m-2 mt-4 flex w-full flex-wrap lg:mt-0"
           >
-            <div class="mx-auto w-full p-2 sm:w-4/5">
-              <label for="modal-email" class="sr-only">Email address</label>
-              <input
-                class="form-input py-4 text-center font-medium"
-                type="email"
-                id="modal-email"
-                name="email"
-                placeholder="Deja tu email"
-                required
-              />
+            <!-- CONTENEDOR DE CAMPOS (Esto es lo que se ocultará) -->
+            <div id="form-content" class="flex w-full flex-col">
+              <!-- Tu input real de correo -->
+              <div class="mx-auto w-full p-2 sm:w-4/5">
+                <label for="modal-email" class="sr-only">Email address</label>
+                <input
+                  class="form-input w-full py-4 text-center font-medium text-black"
+                  type="email"
+                  id="modal-email"
+                  name="email"
+                  placeholder="Deja tu email"
+                  required
+                />
+              </div>
+
+              <!-- Tu botón real de enviar -->
+              <div class="mx-auto mt-4 w-full p-2 sm:w-4/5">
+                <button
+                  id="modal-submit-btn"
+                  type="submit"
+                  aria-label="Join now"
+                  class="text-primaryText shadow-4xl bg-primaryColor hover:bg-primaryColorHover focus:ring-secondaryColor/40 w-full cursor-pointer rounded-xl px-6 py-4 font-semibold transition duration-200 ease-in-out focus:ring"
+                >
+                  Enviar Ahora
+                </button>
+              </div>
             </div>
-            <div class="mx-auto mt-4 w-full p-2 sm:w-4/5">
-              <button
-                class="text-primaryText shadow-4xl bg-primaryColor hover:bg-primaryColorHover focus:ring-secondaryColor/40 w-full cursor-pointer rounded-xl px-6 py-4 font-semibold transition duration-200 ease-in-out focus:ring"
-                type="submit"
-                aria-label="Join now"
-              >
-                Enviar Ahora
-              </button>
+            <!-- Cierre del form-content -->
+
+            <!-- TU MENSAJE DE ÉXITO -->
+            <div
+              id="form-status"
+              class="animate-fade-in mt-4 hidden w-full rounded-xl border border-emerald-600 bg-emerald-800/50 p-4 text-center font-medium text-white"
+            >
+              ¡Gracias! Tu cita ha sido agendada con éxito.
             </div>
           </form>
         </div>
@@ -100,16 +117,18 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
   const initInvitationForm = () => {
     const form = document.getElementById('invitation-form') as HTMLFormElement;
     const submitBtn = document.getElementById('modal-submit-btn') as HTMLButtonElement;
-    const successMsg = document.getElementById('form-success-message');
+    const successMsg = document.getElementById('form-status'); // Ajustado a tu id="form-status"
     const errorMsg = document.getElementById('form-error-message');
+    const formContent = document.getElementById('form-content');
 
     form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
+      e.preventDefault(); // Evita la redirección pase lo que pase
 
-      successMsg?.classList.add('hidden');
-      errorMsg?.classList.add('hidden');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
+      // El signo ?. evita que el código muera si no encuentra el botón
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+      }
 
       try {
         const response = await fetch(form.action, {
@@ -119,17 +138,19 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
         });
 
         if (response.ok) {
-          form.classList.add('hidden');
-          successMsg?.classList.remove('hidden');
+          formContent?.classList.add('hidden'); // Oculta solo los inputs y el botón
+          successMsg?.classList.remove('hidden'); // Muestra el mensaje de éxito
           form.reset();
         } else {
-          errorMsg?.classList.remove('hidden');
+          alert('Hubo un problema. Inténtalo de nuevo.');
         }
       } catch (err) {
-        errorMsg?.classList.remove('hidden');
+        alert('Error de conexión.');
       } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar Ahora';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar Ahora';
+        }
       }
     });
   };
