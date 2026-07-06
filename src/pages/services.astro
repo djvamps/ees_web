@@ -8,166 +8,180 @@ import testimonial1 from '../assets/images/testimonial1.png';
 import testimonial2 from '../assets/images/testimonial2.png';
 import testimonial3 from '../assets/images/testimonial3.png';
 
+import waldorfImg from '../assets/images/waldorf.jpg';
+import montessoriImg from '../assets/images/montessori.jpg';
+import asiriImg from '../assets/images/asiri.jpg';
+import pedagogia3000Img from '../assets/images/pedagogia3000.jpg';
+
 const serviceCategories = [
   {
     id: 'tracking',
     label: 'Waldorf',
-    title: 'Capture every interaction',
+    title: 'Principios Fundamentales',
     description: `Creada por Rudolf Steiner en 1919, la educación Waldorf acompaña el
         desarrollo del niño considerando cuerpo, alma y espíritu. Busca respetar
         las etapas evolutivas naturales, fomentando la imaginación, la
         creatividad y la conexión con la naturaleza.`,
     features: [
-      `Educación por etapas: 0 a 7 años (imitación y juego libre); 7 a 14 años
-        (imaginación y sentimiento); 14 a 21 años (pensamiento crítico y
-        libertad interior).`,
-      'Server-side & client-side SDKs',
-      'Event replay & debugging',
-      'Zero sampling - 100% of your data',
+      `Objetivo:`,
+      'Formar niños y niñas felices, libres, creativos y conscientes.',
+      'Aplicación:',
+      'Ritmos naturales, arte y cuento como base del aprendizaje.',
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Educación por etapas:',
+        description:
+          '0 a 7 años (imitación y juego libre); 7 a 14 años (imaginación y sentimiento); 14 a 21 años (pensamiento crítico y libertad interior).',
+      },
+      {
+        step: '02',
+        title: 'Aprendizaje artístico y vivencial:',
+        description: 'todo se enseña con arte, música, narración y movimiento.',
+      },
+      {
+        step: '03',
+        title: 'Ritmo y conexión natural:',
+        description: 'la escuela vive los ciclos del día, la semana y las estaciones.',
+      },
+      {
+        step: '04',
+        title: 'Sin competencia:',
+        description: 'no hay notas ni exámenes, solo acompañamiento.',
+      },
+      {
+        step: '05',
+        title: 'Relación maestro-niño:',
+        description: 'vínculo cercano basado en la confianza y el ejemplo.',
+      },
     ],
     icon: `<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>`,
+    image: waldorfImg,
   },
   {
     id: 'visualization',
     label: 'Montessori',
-    title: 'Dashboards that tell a story',
+    title: 'Principios montessori',
     description:
       'Creada por María Montessori en 1907, promueve la autonomía, el respeto y el aprendizaje activo.',
     features: [
-      '20+ chart types',
-      'Drag-and-drop builder',
-      'Real-time updates',
-      'Shareable public links',
+      'Rol del Educador:',
+      'Guía y observador.',
+      'Aplicación:',
+      'Espacios accesibles, actividades prácticas y materiales naturales.',
     ],
-    icon: `<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>`,
+
+    process: [
+      {
+        step: '01',
+        title: 'Aprendizaje autónomo:',
+        description: 'el niño aprende explorando, el adulto acompaña.',
+      },
+      {
+        step: '02',
+        title: 'Ambiente preparado:',
+        description: 'espacio ordenado, bello y adaptado.',
+      },
+      {
+        step: '03',
+        title: 'Materiales sensoriales:',
+        description: 'concretos, manipulativos y con propósito.',
+      },
+      {
+        step: '04',
+        title: 'Educación integral:',
+        description: 'cuerpo, mente y espíritu en equilibrio.',
+      },
+      {
+        step: '05',
+        title: 'Libertad con límites:',
+        description: 'responsabilidad y respeto como base del disciplina interior.',
+      },
+    ],
+    icon: `<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>`,
+    image: montessoriImg,
   },
   {
     id: 'intelligence',
     label: 'Asiri',
-    title: 'AI that works while you sleep',
+    title: 'Principios Asiri',
     description:
       'Creada por María del Carmen Dongo en el Perú. ˝Asiri˛ significa reír o florecer con alegría. Une el alma, la emoción y la naturaleza.',
     features: [
-      'Anomaly detection & alerts',
-      'Trend forecasting',
-      'Natural-language queries',
-      'Automated weekly reports',
+      'Objetivo:',
+      'Formar seres humanos felices, libres y conectados con su esencia.g',
+      'Aplicación:',
+      'Momentos de silencio, rituales naturales y expresión emocional.',
     ],
-    icon: `<path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/>`,
+
+    process: [
+      {
+        step: '01',
+        title: 'Educación desde el ser:',
+        description: 'el foco no es el conocimiento, sino el autoconocimiento',
+      },
+      {
+        step: '02',
+        title: 'Aprendizaje vivencial:',
+        description: 'se enseña a través de experiencias y emociones.',
+      },
+      {
+        step: '03',
+        title: 'Educador consciente:',
+        description: 'enseña con coherencia y empatía.',
+      },
+      {
+        step: '04',
+        title: 'Ambiente armónico y natural:',
+        description: 'espacios cálidos y espirituales. Integración cuerpo-mente-emoción-espíritu.',
+      },
+    ],
+    icon: `<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>`,
+    image: asiriImg,
   },
   {
     id: 'integrations',
     label: '3000',
-    title: 'Connects to your entire stack',
+    title: 'Principios 3000',
     description:
       'Creada por Noemí Paymal, antropóloga boliviana. Responde a los nuevos niños y niñas del siglo XXI: sensibles, intuitivos, creativos y conscientes.',
     features: [
-      '50+ native integrations',
-      'REST API & webhooks',
-      'Reverse ETL',
-      'Custom connector SDK',
+      'Objetivo:',
+      'Formar personas conscientes, creativas y solidarias.',
+      'Aplicación:',
+      'arte, ciencia, proyectos ecológicos y educación emocional.',
     ],
-    icon: `<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>`,
-  },
-];
 
-const comparisonFeatures = [
-  {
-    name: 'Real-time event streaming',
-    description: 'Sub-100ms latency on all queries',
-    mixpanel: false,
-    amplitude: false,
-    ga4: false,
-  },
-  {
-    name: 'Unlimited event volume',
-    description: 'No caps, no overage fees',
-    mixpanel: false,
-    amplitude: false,
-    ga4: false,
-  },
-  {
-    name: 'AI-powered insights',
-    description: 'Anomaly detection & forecasting',
-    mixpanel: true,
-    amplitude: true,
-    ga4: false,
-  },
-  {
-    name: 'Natural-language queries',
-    description: 'Ask in plain English, get answers',
-    mixpanel: false,
-    amplitude: false,
-    ga4: false,
-  },
-  {
-    name: 'Custom dashboards',
-    description: 'Drag-and-drop builder',
-    mixpanel: true,
-    amplitude: true,
-    ga4: false,
-  },
-  {
-    name: 'REST API & webhooks',
-    description: 'Full programmatic access',
-    mixpanel: true,
-    amplitude: true,
-    ga4: true,
-  },
-  {
-    name: 'Team collaboration',
-    description: 'Shared views, annotations, roles',
-    mixpanel: true,
-    amplitude: true,
-    ga4: false,
-  },
-  {
-    name: 'Zero data sampling',
-    description: '100% of events, always',
-    mixpanel: false,
-    amplitude: false,
-    ga4: false,
-  },
-  {
-    name: 'SOC 2 + GDPR',
-    description: 'Enterprise-grade by default',
-    mixpanel: true,
-    amplitude: true,
-    ga4: true,
-  },
-  {
-    name: 'No per-seat pricing',
-    description: 'Whole team, one price',
-    mixpanel: false,
-    amplitude: false,
-    ga4: true,
-  },
-];
-
-const process = [
-  {
-    step: '01',
-    title: 'Connect your data',
-    description:
-      'Install our lightweight SDK or use the REST API. Most teams are sending events within 15 minutes.',
-  },
-  {
-    step: '02',
-    title: 'Build your views',
-    description:
-      'Use pre-built templates or create custom dashboards. Drag and drop metrics, set filters, choose visualizations.',
-  },
-  {
-    step: '03',
-    title: 'Get insights automatically',
-    description:
-      'Our AI surfaces anomalies and trends before you notice them. Set alerts that actually matter.',
-  },
-  {
-    step: '04',
-    title: 'Scale with confidence',
-    description:
-      'From startup to enterprise - same platform, same speed. No re-architecture needed as your data grows.',
+    process: [
+      {
+        step: '01',
+        title: 'Educación integral y evolutiva:',
+        description: 'múltiples inteligencias, mente, cuerpo, emoción y espíritu.',
+      },
+      {
+        step: '02',
+        title: 'Aprendizaje dinámico:',
+        description: 'juegos, arte, ciencia, movimiento y tecnología.',
+      },
+      {
+        step: '03',
+        title: 'Educación emocional:',
+        description: 'autoconocimiento, empatía y cooperación.',
+      },
+      {
+        step: '04',
+        title: 'Educador co-creador:',
+        description: 'guía flexible que construye experiencias.',
+      },
+      {
+        step: '05',
+        title: 'Conciencia planetaria:',
+        description: 'conexión con la naturaleza y servicio a la comunidad.',
+      },
+    ],
+    icon: `<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>`,
+    image: pedagogia3000Img,
   },
 ];
 
@@ -217,7 +231,7 @@ const testimonials = [
 ---
 
 <Layout
-  title="Services - Tailcast"
+  title="Metodología - Eco Escuela S.E.R."
   description="Explore Tailcast services - real-time analytics, custom dashboards, AI-powered insights, and more."
 >
   <Navbar />
@@ -344,13 +358,12 @@ const testimonials = [
                 </div>
                 <div class="mt-6 lg:mt-0 lg:w-1/2">
                   <div class="bg-bgDark1Lighter flex aspect-[4/3] items-center justify-center rounded-3xl p-12 lg:p-16">
-                    <svg
-                      class="text-secondaryColor/15 h-32 w-32"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="0.5"
-                      viewBox="0 0 24 24"
-                      set:html={cat.icon}
+                    <Image
+                      src={cat.image}
+                      alt={cat.title}
+                      class="h-full w-full object-cover"
+                      loading="eager"
+                      decoding="sync"
                     />
                   </div>
                 </div>
@@ -366,198 +379,31 @@ const testimonials = [
   <section class="py-12 lg:py-24">
     <div class="content-container">
       <div class="fade-in">
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {
-            process.map((item, i) => (
-              <div class="group relative">
-                {i < process.length - 1 && (
-                  <div class="bg-mainBorderDarker absolute top-10 left-[calc(50%+2.5rem)] hidden h-px w-[calc(100%-3.5rem)] lg:block" />
-                )}
-                <div class="text-center">
-                  <div
-                    class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full transition-all duration-500"
-                    style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);"
-                  >
-                    <span class="text-secondaryColor text-2xl font-bold">{item.step}</span>
+        {
+          serviceCategories.map((cat, ci) => (
+            <div class={`process-panel ${ci === 0 ? '' : 'hidden'}`} data-panel={cat.id}>
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                {cat.process.map((item, i) => (
+                  <div class="group relative">
+                    {i < cat.process.length - 1 && (
+                      <div class="bg-mainBorderDarker absolute top-10 left-[calc(50%+2.5rem)] hidden h-px w-[calc(100%-3.5rem)] lg:block" />
+                    )}
+                    <div class="text-center">
+                      <div
+                        class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full transition-all duration-500"
+                        style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);"
+                      >
+                        <span class="text-secondaryColor text-2xl font-bold">{item.step}</span>
+                      </div>
+                      <h3 class="text-primaryText mb-3 text-lg font-bold">{item.title}</h3>
+                      <p class="text-secondaryText text-sm leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
-                  <h3 class="text-primaryText mb-3 text-lg font-bold">{item.title}</h3>
-                  <p class="text-secondaryText text-sm leading-relaxed">{item.description}</p>
-                </div>
+                ))}
               </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Comparison Table -->
-  <section class="py-24">
-    <div class="content-container">
-      <div class="fade-in">
-        <div class="mb-16 text-center">
-          <span class="block-subtitle mb-6 block">Comparison</span>
-          <h2 class="text-primaryText text-3xl font-bold tracking-tight lg:text-4xl">
-            Why teams switch to Tailcast
-          </h2>
-        </div>
-        <div class="bg-bgDark3/40 border-mainBorderFaintest overflow-hidden rounded-3xl border">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-mainBorderDarker border-b">
-                <th class="text-secondaryText w-1/2 p-3 text-left font-medium sm:p-5 lg:p-6"
-                  >Feature</th
-                >
-                <th class="p-3 text-center sm:p-5 lg:p-6">
-                  <span class="text-secondaryColor text-base font-bold">Tailcast</span>
-                </th>
-                <th class="p-3 text-center sm:p-5 lg:p-6">
-                  <span class="text-secondaryText font-medium">Datawise</span>
-                </th>
-                <th class="hidden p-3 text-center sm:table-cell sm:p-5 lg:p-6">
-                  <span class="text-secondaryText font-medium">Metrifly</span>
-                </th>
-                <th class="hidden p-3 text-center sm:p-5 md:table-cell lg:p-6">
-                  <span class="text-secondaryText font-medium">Chartbolt</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                comparisonFeatures.map((f, i) => (
-                  <tr
-                    class={
-                      i < comparisonFeatures.length - 1 ? 'border-mainBorderFaintest border-b' : ''
-                    }
-                  >
-                    <td class="p-3 sm:p-5 lg:p-6">
-                      <div class="text-primaryText text-[0.95rem] font-medium">{f.name}</div>
-                      <div class="text-secondaryText mt-0.5 hidden text-sm lg:block">
-                        {f.description}
-                      </div>
-                    </td>
-                    <td class="bg-secondaryColor/[0.03] p-3 text-center sm:p-5 lg:p-6">
-                      <div class="flex justify-center">
-                        <div class="bg-secondaryColor/15 flex h-7 w-7 items-center justify-center rounded-lg">
-                          <svg
-                            class="text-secondaryColor h-4 w-4"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2.5"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path d="M20 6L9 17l-5-5" />
-                          </svg>
-                          <span class="sr-only">Yes</span>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="p-3 text-center sm:p-5 lg:p-6">
-                      <div class="flex justify-center">
-                        {f.mixpanel ? (
-                          <>
-                            <svg
-                              class="text-secondaryText/40 h-5 w-5"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M20 6L9 17l-5-5" />
-                            </svg>
-                            <span class="sr-only">Yes</span>
-                          </>
-                        ) : (
-                          <>
-                            <svg
-                              class="h-5 w-5 text-[rgb(255_255_255/0.1)]"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M5 12h14" />
-                            </svg>
-                            <span class="sr-only">No</span>
-                          </>
-                        )}
-                      </div>
-                    </td>
-                    <td class="hidden p-3 text-center sm:table-cell sm:p-5 lg:p-6">
-                      <div class="flex justify-center">
-                        {f.amplitude ? (
-                          <>
-                            <svg
-                              class="text-secondaryText/40 h-5 w-5"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M20 6L9 17l-5-5" />
-                            </svg>
-                            <span class="sr-only">Yes</span>
-                          </>
-                        ) : (
-                          <>
-                            <svg
-                              class="h-5 w-5 text-[rgb(255_255_255/0.1)]"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M5 12h14" />
-                            </svg>
-                            <span class="sr-only">No</span>
-                          </>
-                        )}
-                      </div>
-                    </td>
-                    <td class="hidden p-3 text-center sm:p-5 md:table-cell lg:p-6">
-                      <div class="flex justify-center">
-                        {f.ga4 ? (
-                          <>
-                            <svg
-                              class="text-secondaryText/40 h-5 w-5"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M20 6L9 17l-5-5" />
-                            </svg>
-                            <span class="sr-only">Yes</span>
-                          </>
-                        ) : (
-                          <>
-                            <svg
-                              class="h-5 w-5 text-[rgb(255_255_255/0.1)]"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M5 12h14" />
-                            </svg>
-                            <span class="sr-only">No</span>
-                          </>
-                        )}
-                      </div>
-                    </td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -677,11 +523,12 @@ const testimonials = [
         btn.querySelector('.tab-icon')?.classList.remove('text-secondaryText/50');
         btn.querySelector('.tab-icon')?.classList.add('text-secondaryColor');
 
-        document.querySelectorAll('.tab-panel').forEach((panel) => {
+        document.querySelectorAll('.tab-panel, .process-panel').forEach((panel) => {
           panel.classList.add('hidden');
         });
-        const target = document.querySelector(`[data-panel="${tabId}"]`);
-        target?.classList.remove('hidden');
+        document.querySelectorAll(`[data-panel="${tabId}"]`).forEach((target) => {
+          target.classList.remove('hidden');
+        });
       });
     });
   };
