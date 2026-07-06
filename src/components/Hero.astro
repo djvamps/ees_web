@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import heroBg from '../assets/images/nina-sembrando.png';
+import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
 ---
 
 <section
@@ -16,6 +17,9 @@ import heroBg from '../assets/images/nina-sembrando.png';
       loading="eager"
     />
     <div class="hero-bg-overlay absolute inset-0" style="opacity: 0.85;"></div>
+    <div class="absolute inset-0 opacity-90 mix-blend-screen">
+      <BackgroundGradientAnimation />
+    </div>
   </div>
 
   <div

@@ -33,6 +33,13 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
+
+  /* aurora gradient animate */
+  --animate-first: moveVertical 10s ease infinite;
+  --animate-second: moveInCircle 8s reverse infinite;
+  --animate-third: moveInCircle 14s linear infinite;
+  --animate-fourth: moveHorizontal 12s ease infinite;
+  --animate-fifth: moveInCircle 8s ease infinite;
 }
 
 /* Layout */
@@ -182,6 +189,44 @@
     margin: 0;
   }
 }
+
+/* aurora gradient */
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
 .modal-close-button {
   @apply absolute top-5 right-5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-[rgb(255,255,255,0.7)] transition hover:text-white;
 }

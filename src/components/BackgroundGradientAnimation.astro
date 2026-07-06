@@ -1,0 +1,99 @@
+---
+interface Props {
+  gradientStart?: string;
+  gradientEnd?: string;
+  firstColor?: string;
+  secondColor?: string;
+  thirdColor?: string;
+  fourthColor?: string;
+  fifthColor?: string;
+  pointerColor?: string;
+}
+
+const {
+  gradientStart = 'rgb(58, 38, 20)',
+  gradientEnd = 'rgb(20, 32, 14)',
+  firstColor = '193, 80, 46',
+  secondColor = '217, 163, 44',
+  thirdColor = '91, 127, 50',
+  fourthColor = '242, 167, 27',
+  fifthColor = '232, 196, 104',
+  pointerColor = '217, 163, 44',
+} = Astro.props;
+---
+
+<div
+  id="gradient-bg"
+  class="absolute inset-0 overflow-hidden"
+  style={`--gradient-start:${gradientStart}; --gradient-end:${gradientEnd}; --first-color:${firstColor}; --second-color:${secondColor}; --third-color:${thirdColor}; --fourth-color:${fourthColor}; --fifth-color:${fifthColor}; --pointer-color:${pointerColor};`}
+>
+  <svg style="position:absolute; width:0; height:0;">
+    <filter id="blurMe">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+    </filter>
+  </svg>
+
+  <div class="absolute inset-0 [filter:url(#blurMe)_blur(20px)]">
+    <div
+      class="animate-first absolute top-[calc(50%-40%)] left-[calc(50%-40%)] h-[80%] w-[80%] opacity-100 [mix-blend-mode:hard-light]"
+      style="background:radial-gradient(circle at center, rgba(var(--first-color), 0.8) 0%, rgba(var(--first-color), 0) 50%);"
+    >
+    </div>
+    <div
+      class="animate-second absolute top-[calc(50%-40%)] left-[calc(50%-40%)] h-[80%] w-[80%] origin-[calc(50%-400px)] opacity-100 [mix-blend-mode:hard-light]"
+      style="background:radial-gradient(circle at center, rgba(var(--second-color), 0.8) 0%, rgba(var(--second-color), 0) 50%);"
+    >
+    </div>
+    <div
+      class="animate-third absolute top-[calc(50%-40%+200px)] left-[calc(50%-40%-500px)] h-[80%] w-[80%] origin-[calc(50%+400px)] opacity-100 [mix-blend-mode:hard-light]"
+      style="background:radial-gradient(circle at center, rgba(var(--third-color), 0.8) 0%, rgba(var(--third-color), 0) 50%);"
+    >
+    </div>
+    <div
+      class="animate-fourth absolute top-[calc(50%-40%)] left-[calc(50%-40%)] h-[80%] w-[80%] opacity-70 [mix-blend-mode:hard-light]"
+      style="background:radial-gradient(circle at center, rgba(var(--fourth-color), 0.8) 0%, rgba(var(--fourth-color), 0) 50%);"
+    >
+    </div>
+    <div
+      class="animate-fifth absolute top-[calc(50%-80%)] left-[calc(50%-80%)] h-[160%] w-[160%] opacity-100 [mix-blend-mode:hard-light]"
+      style="background:radial-gradient(circle at center, rgba(var(--fifth-color), 0.8) 0%, rgba(var(--fifth-color), 0) 50%);"
+    >
+    </div>
+
+    <div
+      id="gradient-pointer"
+      class="absolute -top-1/2 -left-1/2 h-full w-full opacity-70 [mix-blend-mode:hard-light]"
+      style="background:radial-gradient(circle at center, rgba(var(--pointer-color), 0.8) 0%, rgba(var(--pointer-color), 0) 50%);"
+    >
+    </div>
+  </div>
+</div>
+
+<script>
+  function initGradientPointer() {
+    const container = document.getElementById('gradient-bg');
+    const pointer = document.getElementById('gradient-pointer');
+    if (!container || !pointer) return;
+
+    let curX = 0,
+      curY = 0,
+      tgX = 0,
+      tgY = 0;
+
+    function move() {
+      curX += (tgX - curX) / 20;
+      curY += (tgY - curY) / 20;
+      pointer.style.transform = `translate(${curX}px, ${curY}px)`;
+      requestAnimationFrame(move);
+    }
+    move();
+
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      tgX = e.clientX - rect.left;
+      tgY = e.clientY - rect.top;
+    });
+  }
+
+  document.addEventListener('astro:page-load', initGradientPointer);
+</script>
