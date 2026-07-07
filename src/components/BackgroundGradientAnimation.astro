@@ -81,6 +81,7 @@ const {
       tgY = 0;
 
     function move() {
+      if (!pointer) return;
       curX += (tgX - curX) / 20;
       curY += (tgY - curY) / 20;
       pointer.style.transform = `translate(${curX}px, ${curY}px)`;

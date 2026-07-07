@@ -7,20 +7,28 @@ import TiktokIcon from '../assets/icons/TiktokIcon.astro';
 const footerData = [
   {
     title: 'La Escuela',
-    items: ['Nuestra Historia', 'Misión y Visión', 'Metodología', 'Admisión 2026'],
+    items: [
+      { name: 'Nuestra Historia', href: '#' },
+      { name: 'Misión y Visión', href: '/#features' },
+      { name: 'Metodología', href: '/metodologia' },
+      { name: 'Admisión 2026', href: '/ees_2026_4.pdf' },
+    ],
   },
   {
     title: 'Comunidad',
     items: [
-      'Nuestro Equipo',
-      'Galería de Actividades',
-      'Preguntas Frecuentes',
-      'Política de Privacidad',
+      { name: 'Nuestro Equipo', href: '#' },
+      { name: 'Galería de Actividades', href: '#' },
+      { name: 'Preguntas Frecuentes', href: '#' },
+      { name: 'Política de Privacidad', href: '#' },
     ],
   },
   {
     title: 'Contacto',
-    items: ['Trabaja con Nosotros', 'Únete a la Comunidad'],
+    items: [
+      { name: 'Trabaja con Nosotros', href: '#' },
+      { name: 'Únete a la Comunidad', href: '#' },
+    ],
   },
 ];
 ---
@@ -44,8 +52,11 @@ const footerData = [
                 <ul>
                   {section.items.map((item) => (
                     <li class="mb-3">
-                      <a class="cursor-pointer text-sm text-gray-400 hover:text-gray-300" href="#">
-                        {item}
+                      <a
+                        class="cursor-pointer text-sm text-gray-400 hover:text-gray-300"
+                        href={item.href}
+                      >
+                        {item.name}
                       </a>
                     </li>
                   ))}
