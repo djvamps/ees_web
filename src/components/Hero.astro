@@ -11,8 +11,11 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <Image
       src={heroBg}
-      alt=""
+      alt="Eco Escuela S.E.R."
       class="h-full w-full object-cover object-[center_40%]"
+      widths={[400, 800, 1024]}
+      sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1024px"
+      quality={70}
       fetchpriority="high"
       loading="eager"
     />
