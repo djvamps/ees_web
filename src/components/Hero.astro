@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import heroBg from '../assets/images/nina-sembrando.png';
+import heroBg from '../assets/images/nina_sembrando.webp';
 import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
 ---
 
@@ -9,16 +9,17 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
   id="home"
 >
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+    <!-- prettier-ignore -->
     <Image
-      src={heroBg}
-      alt="Eco Escuela S.E.R."
-      class="h-full w-full object-cover object-[center_40%]"
-      widths={[400, 800, 1024]}
-      sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1024px"
-      quality={70}
-      fetchpriority="high"
-      loading="eager"
-    />
+  src={heroBg}
+  alt="Eco Escuela S.E.R."
+  class="h-full w-full object-cover object-[center_40%]"
+  widths={[400, 800, 1024]}
+  sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1024px"
+  quality={70}
+  fetchpriority="high"
+  loading="eager"
+></Image>
     <div class="hero-bg-overlay absolute inset-0" style="opacity: 0.85;"></div>
     <div class="absolute inset-0 opacity-90 mix-blend-screen">
       <BackgroundGradientAnimation />
