@@ -31,7 +31,7 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
   >
     <div class="hero-fade-in" style="--delay: 0s">
       <span
-        class="block-subtitle mt-2 mb-4 block max-w-full px-4 text-center text-[0.55rem] text-balance [text-shadow:0_2px_6px_rgb(0_0_0_/_50%)] sm:mt-16 sm:mb-6 sm:text-[0.65rem]"
+        class="block-subtitle mt-2 mb-4 block max-w-full px-4 text-center text-[0.55rem] text-balance drop-shadow-[0_0_2px_rgba(0,0,0,0.85)] sm:mt-16 sm:mb-6 sm:text-[0.65rem]"
       >
         COMUNIDAD, NATURALEZA Y APRENDISAJE VIVO
       </span>
@@ -45,7 +45,9 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
       </h1>
     </div>
     <div class="hero-fade-in" style="--delay: 0.1s">
-      <p class="mx-auto mt-7 max-w-2xl px-4 text-sm leading-relaxed text-white sm:text-base">
+      <p
+        class="mx-auto mt-7 max-w-2xl px-4 text-sm leading-relaxed text-white drop-shadow-[0_0_3px_rgba(0,0,0,0.8)] sm:text-base"
+      >
         En Eco Escuela Ser creemos que cada niño merece crecer en un espacio donde su esencia sea
         respetada, su curiosidad sea celebrada y su conexión con la naturaleza sea profunda.
         Ofrecemos una educación integral basada en metodologías innovadoras que despiertan el
@@ -56,17 +58,18 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
       <div class="mt-10 mb-24 flex flex-col justify-center gap-2 sm:mb-40 sm:flex-row">
         <a
           href="/ees_2026_4.pdf"
-          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(109,62,6,0.4)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
+          class="btn-animado btn-color-left relative mr-0 mb-2 flex h-12 w-72 items-center justify-center rounded-xl text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(109,62,6,0.4)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
           aria-label="Get started"
         >
-          Admisión 2026
+          <span class="btn-text">Admisión 2026</span>
         </a>
+
         <button
-          class="text-primaryText bg-bgDark2 hover:bg-bgDark3 border-primaryColor flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl border border-solid text-sm font-bold transition sm:w-44"
+          class="btn-animado btn-color-right relative flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl text-sm font-bold transition-all duration-300 sm:w-44"
           data-open-modal
           aria-label="Live demo"
         >
-          Quiero Visitar
+          <span class="btn-text">Quiero Visitar</span>
         </button>
       </div>
     </div>
@@ -76,13 +79,14 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
 <style>
   .hero-bg-overlay {
     background:
-      linear-gradient(135deg, rgb(77 108 31 / 0.3) 0%, transparent 50%),
+      linear-gradient(135deg, rgb(77 108 31 / 0.15) 0%, transparent 50%),
       linear-gradient(
         180deg,
-        rgb(28 39 11 / 0.92) 0%,
-        rgb(40 56 16 / 0.78) 38%,
-        rgb(28 39 11 / 0.88) 72%,
-        rgb(28 39 11) 100%
+        rgb(28 39 11 / 0.75) 0%,
+        /* Menos oscuro arriba */ rgb(40 56 16 / 0.2) 45%,
+        /* Muy transparente en el centro (donde está la niña) */ rgb(28 39 11 / 0.4) 75%,
+        /* Transparencia suave */ rgb(28 39 11 / 0.85) 100%
+          /* Oscuro al final para conectar con la siguiente sección */
       );
   }
 
@@ -97,6 +101,77 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* 1. CONFIGURACIÓN DEL CONTENEDOR PADRE */
+  .btn-animado {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex !important; /* Forzamos que mantenga comportamiento de bloque/flex */
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  /* 2. EL DEGRADADO QUE GIRA (FONDO TRASERO) */
+  .btn-animado::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #e7961b 0deg,
+      #feca57 90deg,
+      #04661c 180deg,
+      #e79b0d 360deg
+    );
+    animation: rotarDegradado 3s linear infinite;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  /* 3. MÁSCARA INTERNA CON FLUJO NORMAL (YA NO ES ABSOLUTO) */
+  /* Forzamos el comportamiento global de la máscara interna */
+  :global(.btn-text) {
+    position: relative !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: inherit !important;
+    border: 2px solid transparent !important;
+    background-clip: padding-box !important;
+  }
+
+  /* Colores específicos inyectados globalmente para asegurar prioridad */
+  :global(.btn-color-left .btn-text) {
+    background-color: #d19f4a !important;
+    color: white !important;
+  }
+
+  :global(.btn-color-right .btn-text) {
+    background-color: #283810 !important;
+    color: white !important;
+  }
+
+  @keyframes rotarDegradado {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 </style>
