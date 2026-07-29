@@ -5,7 +5,6 @@ import netlify from '@astrojs/netlify';
 
 export default defineConfig({
   site: 'https://ecoescuelasoylibre.com',
-  output: 'hybrid',
   adapter: netlify(),
   integrations: [sitemap()],
   vite: {
