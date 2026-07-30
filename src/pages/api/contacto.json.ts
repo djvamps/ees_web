@@ -35,7 +35,7 @@ export const POST: APIRoute = async ({ request }) => {
       from: 'Web E.E.S. <contacto@ecoescuelaser.com>',
 
       // Reemplaza por el correo donde quieres recibir los mensajes:
-      to: ['dalopeza.dev@gmail.com'],
+      to: ['ecoescuelasoylibre@gmail.com'],
 
       // Al responder el correo, responderás directamente al visitante:
       replyTo: email.trim(),
