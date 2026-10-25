@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  site: 'https://ecoescuelasoylibre.com',
+  site: 'https://ecoescuelaser.com',
   adapter: netlify(),
   integrations: [sitemap()],
   vite: {
