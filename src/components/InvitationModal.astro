@@ -4,82 +4,138 @@ import CloseIcon from '../assets/icons/CloseIcon.astro';
 import TailcastLogo from '../assets/logos/TailcastLogo.astro';
 ---
 
-<dialog id="invitation-modal" class="modal-backdrop" aria-labelledby="modal-title">
+<!-- Usamos m-auto puro y limpio para que el navegador lo centre de forma nativa en cualquier dispositivo -->
+<dialog
+  id="invitation-modal"
+  class="m-auto max-h-none max-w-none overflow-hidden rounded-2xl border-none bg-transparent p-0 shadow-2xl outline-none backdrop:bg-black/80"
+  aria-labelledby="modal-title"
+>
+  <!-- Contenedor interno con ancho responsivo fluido y centrado absoluto -->
   <div
-    class="xs:w-[90vw] xs:h-auto xs:max-w-[25rem] xs:rounded-2xl xs:pt-8 bg-bgDarkTransparentLighter main-border-gray-darker xs:block relative flex h-screen w-screen flex-col justify-start overflow-hidden rounded-none px-6 pt-[11vh] pb-8 backdrop-blur-xl lg:w-[53.125rem] lg:max-w-none lg:px-10 lg:pt-8 xl:w-[57.5rem] 2xl:w-[68.75rem] 2xl:px-16 2xl:py-12"
+    class="bg-bgDarkTransparentLighter main-border-gray-darker relative mx-auto max-h-[85vh] w-[92vw] max-w-[28rem] overflow-y-auto rounded-2xl p-6 backdrop-blur-xl sm:max-w-[32rem] sm:p-8 lg:w-[53.125rem] lg:max-w-none lg:px-10 xl:w-[57.5rem] xl:px-16 2xl:w-[68.75rem] 2xl:py-12"
   >
-    <button class="modal-close-button" id="modal-close" aria-label="Close modal">
+    <!-- Botón de Cierre -->
+    <button
+      class="absolute top-4 right-4 z-10 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-black/40 p-2 text-white hover:text-gray-300"
+      id="modal-close"
+      aria-label="Close modal"
+    >
       <CloseIcon />
     </button>
-    <div class="flex">
-      <div class="hidden w-1/2 pl-4 lg:inline 2xl:pl-0">
-        <h2 class="text-primaryText mt-6 mb-2 text-4xl font-bold tracking-normal 2xl:text-5xl">
+
+    <div class="flex flex-col items-center lg:flex-row lg:items-stretch lg:gap-8">
+      <!-- Columna izquierda: Información institucional -->
+      <div class="flex w-full flex-col justify-center lg:w-1/2 lg:pl-0">
+        <h2
+          class="text-primaryText mt-2 mb-1 text-2xl font-bold tracking-normal sm:text-4xl lg:mt-0 2xl:text-5xl"
+        >
           Agenda una Cita
         </h2>
-        <h2 class="text-secondaryColor text-4xl font-bold tracking-normal 2xl:text-5xl">Guiada</h2>
-        <ul class="text-primaryText mt-8 mb-6 2xl:mt-12">
-          <li class="mb-4 flex"><CheckArrowIcon /><span>Visita: Lun 9:00am - 01:00pm</span></li>
-          <li class="mb-4 flex"><CheckArrowIcon /><span>Reserva Cita: 931 314 153</span></li>
-          <li class="mb-4 flex">
-            <CheckArrowIcon /><span>Niveles: Jardín de Infancia y Primaria </span>
+        <h2 class="text-secondaryColor text-2xl font-bold tracking-normal sm:text-4xl 2xl:text-5xl">
+          Guiada
+        </h2>
+        <ul
+          class="text-primaryText mt-4 mb-6 space-y-2.5 text-xs sm:mt-6 sm:space-y-3 sm:text-base 2xl:mt-12"
+        >
+          <li class="flex items-center gap-2.5">
+            <CheckArrowIcon /><span>Visita: Lun 9:00am - 01:00pm</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <CheckArrowIcon /><span>Reserva Cita: 931 314 153</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <CheckArrowIcon /><span>Niveles: Jardín de Infancia y Primaria</span>
           </li>
         </ul>
       </div>
-      <div class="flex w-full flex-col items-center justify-center pt-0 lg:w-1/2">
-        <div class="mb-6 flex items-center justify-start pr-6 lg:hidden">
-          <div class="mr-2 text-8xl text-white">
+
+      <!-- Columna derecha: Formulario optimizado -->
+      <div
+        class="mt-4 flex w-full flex-col items-center justify-center border-t border-white/10 pt-2 lg:mt-0 lg:w-1/2 lg:border-t-0 lg:pt-0"
+      >
+        <!-- Logo versión móvil compacto -->
+        <div class="my-2 flex items-center justify-center lg:hidden">
+          <div class="mr-2 text-4xl text-white">
             <TailcastLogo />
           </div>
-          <div class="font-['Inter'] text-3xl font-bold text-white">E.E.S.</div>
+          <div class="font-['Inter'] text-xl font-bold text-white">E.E.S.</div>
         </div>
+
         <h3
-          class="text-primaryText mb-5 text-center text-xl leading-snug font-bold 2xl:mb-7 2xl:text-2xl"
+          class="text-primaryText mb-4 text-center text-base leading-snug font-bold sm:text-xl 2xl:mb-7 2xl:text-2xl"
           id="modal-title"
         >
           Reserva tu visita
         </h3>
-        <div class="-m-2 mt-4 flex flex-wrap lg:mt-0">
+
+        <div class="w-full">
           <form
             id="invitation-form"
             action="https://formspree.io/f/xlgywdob"
             method="POST"
-            class="-m-2 mt-4 flex w-full flex-wrap lg:mt-0"
+            class="flex w-full flex-col items-center"
           >
-            <!-- CONTENEDOR DE CAMPOS (Esto es lo que se ocultará) -->
-            <div id="form-content" class="flex w-full flex-col">
-              <!-- Tu input real de correo -->
-              <div class="mx-auto w-full p-2 sm:w-4/5">
-                <label for="modal-email" class="sr-only">Email address</label>
+            <!-- CONTENEDOR DE CAMPOS -->
+            <div id="form-content" class="flex w-full flex-col items-center space-y-3">
+              <!-- Input Nombre -->
+              <div class="w-full sm:w-4/5">
+                <label for="modal-name" class="sr-only">Nombre completo</label>
                 <input
-                  class="form-input w-full py-4 text-center font-medium text-black"
-                  type="email"
-                  id="modal-email"
-                  name="email"
-                  placeholder="Deja tu email"
+                  class="form-input focus:border-secondaryColor w-full rounded-xl border border-white/20 bg-black/40 px-4 py-2.5 text-center text-xs font-medium text-white placeholder:text-gray-400 focus:outline-none sm:py-3 sm:text-base"
+                  type="text"
+                  id="modal-name"
+                  name="nombre"
+                  placeholder="Tu Nombre Completo"
                   required
                 />
               </div>
 
-              <!-- Tu botón real de enviar -->
-              <div class="mx-auto mt-4 w-full p-2 sm:w-4/5">
+              <!-- Input Teléfono / WhatsApp -->
+              <div class="w-full sm:w-4/5">
+                <label for="modal-phone" class="sr-only">Teléfono o WhatsApp</label>
+                <input
+                  class="form-input focus:border-secondaryColor w-full rounded-xl border border-white/20 bg-black/40 px-4 py-2.5 text-center text-xs font-medium text-white placeholder:text-gray-400 focus:outline-none sm:py-3 sm:text-base"
+                  type="tel"
+                  id="modal-phone"
+                  name="telefono"
+                  placeholder="Teléfono / WhatsApp"
+                  required
+                />
+              </div>
+
+              <!-- Input Email -->
+              <div class="w-full sm:w-4/5">
+                <label for="modal-email" class="sr-only">Email address</label>
+                <input
+                  class="form-input focus:border-secondaryColor w-full rounded-xl border border-white/20 bg-black/40 px-4 py-2.5 text-center text-xs font-medium text-white placeholder:text-gray-400 focus:outline-none sm:py-3 sm:text-base"
+                  type="email"
+                  id="modal-email"
+                  name="email"
+                  placeholder="Correo Electrónico"
+                  required
+                />
+              </div>
+
+              <!-- Botón de Envío -->
+              <div class="w-full pt-1 sm:w-4/5">
                 <button
                   id="modal-submit-btn"
                   type="submit"
-                  aria-label="Join now"
-                  class="text-primaryText shadow-4xl bg-primaryColor hover:bg-primaryColorHover focus:ring-secondaryColor/40 w-full cursor-pointer rounded-xl px-6 py-4 font-semibold transition duration-200 ease-in-out focus:ring"
+                  aria-label="Enviar ahora"
+                  class="text-primaryText shadow-4xl bg-primaryColor hover:bg-primaryColorHover focus:ring-secondaryColor/40 w-full cursor-pointer rounded-xl px-6 py-3 text-xs font-semibold transition duration-200 ease-in-out focus:ring sm:py-3.5 sm:text-base"
                 >
                   Enviar Ahora
                 </button>
               </div>
             </div>
-            <!-- Cierre del form-content -->
 
-            <!-- TU MENSAJE DE ÉXITO -->
+            <!-- MENSAJE DE ÉXITO -->
             <div
               id="form-status"
-              class="animate-fade-in mt-4 hidden w-full rounded-xl border border-emerald-600 bg-emerald-800/50 p-4 text-center font-medium text-white"
+              class="animate-fade-in mt-4 hidden w-full rounded-xl border border-emerald-600 bg-emerald-800/50 p-4 text-center text-xs font-medium text-white sm:w-4/5 sm:text-base"
             >
-              ¡Gracias! Tu cita ha sido agendada con éxito.
+              ¡Gracias! Tu cita ha sido agendada con éxito. Nos pondremos en contacto contigo
+              pronto.
             </div>
           </form>
         </div>
@@ -94,17 +150,39 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
     const closeBtn = document.getElementById('modal-close');
     let previouslyFocused: HTMLElement | null = null;
 
+    if (!modal) return;
+
+    if (modal.open) {
+      modal.close();
+    }
+
     document.querySelectorAll('[data-open-modal]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         previouslyFocused = document.activeElement as HTMLElement;
-        modal.showModal();
+        if (!modal.open) {
+          modal.showModal();
+        }
       });
     });
 
-    closeBtn?.addEventListener('click', () => modal.close());
+    closeBtn?.addEventListener('click', () => {
+      if (modal.open) modal.close();
+    });
 
     modal?.addEventListener('click', (e) => {
-      if (e.target === modal) modal.close();
+      const dialogBox = modal.querySelector('div');
+      if (dialogBox) {
+        const rect = dialogBox.getBoundingClientRect();
+        const isInDialog =
+          rect.top <= e.clientY &&
+          e.clientY <= rect.bottom &&
+          rect.left <= e.clientX &&
+          e.clientX <= rect.right;
+        if (!isInDialog && modal.open) {
+          modal.close();
+        }
+      }
     });
 
     modal?.addEventListener('close', () => {
@@ -112,19 +190,17 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
     });
   };
 
-  document.addEventListener('astro:page-load', initModal);
-
   const initInvitationForm = () => {
     const form = document.getElementById('invitation-form') as HTMLFormElement;
     const submitBtn = document.getElementById('modal-submit-btn') as HTMLButtonElement;
-    const successMsg = document.getElementById('form-status'); // Ajustado a tu id="form-status"
-    const errorMsg = document.getElementById('form-error-message');
+    const successMsg = document.getElementById('form-status');
     const formContent = document.getElementById('form-content');
 
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault(); // Evita la redirección pase lo que pase
+    if (!form) return;
 
-      // El signo ?. evita que el código muera si no encuentra el botón
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Enviando...';
@@ -138,8 +214,8 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
         });
 
         if (response.ok) {
-          formContent?.classList.add('hidden'); // Oculta solo los inputs y el botón
-          successMsg?.classList.remove('hidden'); // Muestra el mensaje de éxito
+          formContent?.classList.add('hidden');
+          successMsg?.classList.remove('hidden');
           form.reset();
         } else {
           alert('Hubo un problema. Inténtalo de nuevo.');
@@ -155,6 +231,8 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
     });
   };
 
-  document.addEventListener('astro:page-load', initModal);
-  document.addEventListener('astro:page-load', initInvitationForm);
+  document.addEventListener('astro:page-load', () => {
+    initModal();
+    initInvitationForm();
+  });
 </script>
