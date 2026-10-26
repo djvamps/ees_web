@@ -55,24 +55,27 @@ import BackgroundGradientAnimation from './BackgroundGradientAnimation.astro';
         potencial único de cada ser humano.
       </p>
     </div>
-    <div class="hero-fade-in" style="--delay: 0.15s">
-      <div class="mt-10 mb-24 flex flex-col justify-center gap-2 sm:mb-40 sm:flex-row">
-        <a
-          href="/admision_2027_EES.pdf"
-          class="btn-animado btn-color-left relative mr-0 mb-2 flex h-12 w-72 items-center justify-center rounded-xl text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(109,62,6,0.4)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
-          aria-label="Get started"
-        >
-          <span class="btn-text">Admisión 2027</span>
-        </a>
+    <div class="mt-10 mb-24 flex flex-col justify-center gap-2 sm:mb-40 sm:flex-row">
+      <!-- Botón 1: Abre el Modal de Agendar Visita -->
+      <button
+        type="button"
+        data-open-modal
+        class="btn-animado btn-color-left relative mr-0 mb-2 flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(109,62,6,0.4)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
+        aria-label="Agendar Visita"
+      >
+        <span class="btn-text">Agendar Visita</span>
+      </button>
 
-        <button
-          class="btn-animado btn-color-right relative flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl text-sm font-bold transition-all duration-300 sm:w-44"
-          data-open-modal
-          aria-label="Live demo"
-        >
-          <span class="btn-text">Quiero Visitar</span>
-        </button>
-      </div>
+      <!-- Botón 2: Enlace al PDF o sección de Admisión -->
+      <a
+        href="/admision_2027_EES.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-animado btn-color-right relative flex h-12 w-72 items-center justify-center rounded-xl text-sm font-bold transition-all duration-300 sm:w-44"
+        aria-label="Proceso de Admisión"
+      >
+        <span class="btn-text">Admisión 2027</span>
+      </a>
     </div>
   </div>
 </section>
