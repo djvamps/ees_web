@@ -62,27 +62,19 @@ const POSTHOG_HOST = import.meta.env.PUBLIC_POSTHOG_HOST || 'https://us.i.postho
     <title>{title}</title>
     <ClientRouter />
 
-<!-- Script de PostHog Analytics -->
-  {import.meta.env.PROD && POSTHOG_KEY && (
-    <script 
-      is:inline 
-      id="posthog-js" 
-      data-key={POSTHOG_KEY} 
-      data-host={POSTHOG_HOST}
-    >
-      // @ts-nocheck
-      !(function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}
-      (p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);
-      var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (type)"),e},u.get_distinct_id=function(){return u.get_distinct_id_val},u.get_session_id=function(){return u.get_session_id_val},u.get_session_replay_url=function(){return u.get_session_replay_url_val},g(u,"capture"),g(u,"identify"),g(u,"alias"),g(u,"set_config"),g(u,"register"),g(u,"register_once"),g(u,"unregister"),g(u,"opt_out_capturing"),g(u,"has_opted_out_capturing"),g(u,"opt_in_capturing"),g(u,"reset"),g(u,"isFeatureEnabled"),g(u,"on"),g(u,"reloadFeatureFlags"),g(u,"group"),g(u,"updateEarlyAccessFeatureEnrollment"),g(u,"getEarlyAccessFeatures"),g(u,"getEarlyAccessFeature"),g(u,"getAstroConfig");
-      e._i.push([i,s,a])},e.__SV=1);
-      }(document,window.posthog||[]));
+  <!-- Script de PostHog Analytics -->
+  <script is:inline id="posthog-js" data-key={POSTHOG_KEY} data-host={POSTHOG_HOST}>
+    // @ts-nocheck
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}((p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1+".people")},r=["capture","identify","alias","group","set_config","register","register_once","unregister","opt_out_capturing","opt_in_capturing","has_opted_out_capturing","is_opted_in_capturing","get_session_id","get_session_replay_url","updateEarlyAccessFeatureEnrollment","getEarlyAccessFeatures","getSurveys","getSurvey","isFeatureEnabled","reloadFeatureFlags","reloadFeatureFlagsData","safeGetFeatureFlag","getFeatureFlag","getFeatureFlagPayload","isSessionReplayActive","reset","debug","on","once","off","offAll","and"],dnn=0;dnn<r.length;dnn++)g(u,r[dnn]);e._i.push([i,s,a])},{e.__SV=1})}(document,window.posthog||[]);
 
-      const scriptEl = document.getElementById('posthog-js');
-      if (scriptEl) {
-        posthog.init(scriptEl.getAttribute('data-key'), { api_host: scriptEl.getAttribute('data-host') });
-      }
-    </script>
-  )}
+    const scriptEl = document.getElementById('posthog-js');
+    if (scriptEl && scriptEl.getAttribute('data-key')) {
+      posthog.init(scriptEl.getAttribute('data-key'), {
+        api_host: scriptEl.getAttribute('data-host'),
+        person_profiles: 'identified_only'
+      });
+    }
+  </script>
 
 
     <!-- Open Graph -->
